@@ -23,7 +23,7 @@ if !ERRORLEVEL! neq 0 (
 )
 
 :APPS_MENU_CLEAR
-set APPS_MENU="Google Chrome" "Mozilla Firefox" "Brave" "Opera GX" "Microsoft WebView" "Vivaldi" "Deezer" "Spotify" "iTunes" "PotPlayer" "VLC media player" "Audacity" "OBS Studio" "ImageGlass" "ShareX" "GIMP" "Discord" "TeamSpeak" "Teams" "Zoom" "Slack" "Adobe Acrobat Reader" "Foxit Reader" "Microsoft Office" "Libre Office" "7zip" "Winrar" "Visual Studio Code" "Notepad++" "Github" "Git" "FileZilla" "WinSCP" "PuTTY" "Python 3" "Java Runtime Environment 8" "Node.JS" "Steam" "GOG Galaxy" "Epic Games" "Uplay" "Battle.net" "Origin" "VirtualBox" "VMware Workstation Pro" "VMware Workstation Player" "TeamViewer" "AnyDesk" "qBittorrent" "Bulk Crap Uninstaller" "Everything" "MSI Afterburner" "Visual C++ Redistributables" "DirectX" ".NET Framework 4.8"
+set APPS_MENU="Google Chrome" "Mozilla Firefox" "Brave" "Opera GX" "Microsoft Edge" "Vivaldi" "Deezer" "Spotify" "iTunes" "PotPlayer" "VLC media player" "Audacity" "OBS Studio" "ImageGlass" "ShareX" "GIMP" "Discord" "TeamSpeak" "Teams" "Zoom" "Slack" "Adobe Acrobat Reader" "Foxit Reader" "Microsoft Office" "Libre Office" "7zip" "Winrar" "Visual Studio Code" "Notepad++" "Github" "Git" "FileZilla" "WinSCP" "PuTTY" "Python 3" "Java Runtime Environment 8" "Node.JS" "Steam" "GOG Galaxy" "Epic Games" "Uplay" "Battle.net" "Origin" "VirtualBox" "VMware Workstation Pro" "VMware Workstation Player" "TeamViewer" "AnyDesk" "qBittorrent" "Bulk Crap Uninstaller" "Everything" "MSI Afterburner" "Visual C++ Redistributables" "DirectX" ".NET Framework 4.8"
 for %%i in (!APPS_MENU!) do set "%%~i=[ ] %%~i"
 
 :APPS_MENU
@@ -40,7 +40,7 @@ echo               1 !Google Chrome!                          7 !Deezer!        
 echo               2 !Mozilla Firefox!                        8 !Spotify!                               15 !ShareX!
 echo               3 !Brave!                                  9 !iTunes!                                16 !GIMP!
 echo               4 !Opera GX!                              10 !PotPlayer!
-echo               5 !Microsoft WebView!                     11 !VLC media player!
+echo               5 !Microsoft Edge!                        11 !VLC media player!
 echo               6 !Vivaldi!                               12 !Audacity!
 echo                                                           13 !OBS Studio!
 echo.
@@ -82,7 +82,7 @@ if "!choice!"=="1" if "!Google Chrome!"=="[ ] Google Chrome" (set "Google Chrome
 if "!choice!"=="2" if "!Mozilla Firefox!"=="[ ] Mozilla Firefox" (set "Mozilla Firefox=[x] Mozilla Firefox") else set "Mozilla Firefox=[ ] Mozilla Firefox"
 if "!choice!"=="3" if "!Brave!"=="[ ] Brave" (set "Brave=[x] Brave") else set "Brave=[ ] Brave"
 if "!choice!"=="4" if "!Opera GX!"=="[ ] Opera GX" (set "Opera GX=[x] Opera GX") else set "Opera GX=[ ] Opera GX"
-if "!choice!"=="5" if "!Microsoft WebView!"=="[ ] Microsoft WebView" (set "Microsoft WebView=[x] Microsoft WebView") else set "Microsoft WebView=[ ] Microsoft WebView"
+if "!choice!"=="5" if "!Microsoft Edge!"=="[ ] Microsoft Edge" (set "Microsoft Edge=[x] Microsoft Edge") else set "Microsoft Edge=[ ] Microsoft Edge"
 if "!choice!"=="6" if "!Vivaldi!"=="[ ] Vivaldi" (set "Vivaldi=[x] Vivaldi") else set "Vivaldi=[ ] Vivaldi"
 
 REM MEDIA
@@ -173,7 +173,7 @@ if "!Google Chrome!"=="[x] Google Chrome" call:CHOCO googlechrome
 if "!Mozilla Firefox!"=="[x] Mozilla Firefox" call:CHOCO firefox
 if "!Brave!"=="[x] Brave" call:CHOCO brave
 if "!Opera GX!"=="[x] Opera GX" call:CHOCO opera-gx
-if "!Microsoft WebView!"=="[x] Microsoft WebView" call:CHOCO webview2-runtime
+if "!Microsoft Edge!"=="[x] Microsoft Edge" call:CHOCO microsoft-edge
 if "!Vivaldi!"=="[x] Vivaldi" call:CHOCO vivaldi
 
 REM MEDIA
