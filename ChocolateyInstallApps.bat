@@ -6,9 +6,9 @@ chcp 65001 >nul 2>&1
 openfiles >nul 2>&1
 if !ERRORLEVEL! neq 0 (
     echo You are not running as Administrator...
-    echo This batch cannot do it's job without elevation!
+    echo This batch cannot do its job without elevation!
     echo.
-    echo Right-click and select ^'Run as Administrator^' and try again...
+    echo Please right-click and select 'Run as Administrator' and try again...
     echo.
     echo Press any key to exit . . .
     pause >nul && exit
@@ -16,14 +16,14 @@ if !ERRORLEVEL! neq 0 (
 
 ping -n 1 "google.com" >nul 2>&1
 if !ERRORLEVEL! neq 0 (
-    echo ERROR: No internet connection found
+    echo ERROR: No internet connection detected.
     echo.
     echo Please make sure you are connected to the internet and try again . . .
     pause >nul && exit
 )
 
 :APPS_MENU_CLEAR
-set APPS_MENU="Google Chrome" "Mozilla Firefox" "Brave" "Opera GX" "Microsoft Edge" "Vivaldi" "Deezer" "Spotify" "iTunes" "PotPlayer" "VLC media player" "Audacity" "OBS Studio" "ImageGlass" "ShareX" "GIMP" "Discord" "TeamSpeak" "Teams" "Zoom" "Slack" "Adobe Acrobat Reader" "Foxit Reader" "Microsoft Office" "Libre Office" "7zip" "Winrar" "Visual Studio Code" "Notepad++" "Github" "Git" "FileZilla" "WinSCP" "PuTTY" "Python 3" "Java Runtime Environment 8" "Node.JS" "Steam" "GOG Galaxy" "Epic Games" "Uplay" "Battle.net" "Origin" "VirtualBox" "VMware Workstation Pro" "VMware Workstation Player" "TeamViewer" "AnyDesk" "qBittorrent" "Bulk Crap Uninstaller" "Everything" "MSI Afterburner" "Visual C++ Redistributables" "DirectX" ".NET Framework 4.8"
+set APPS_MENU="Google Chrome" "Mozilla Firefox" "Brave" "Opera GX" "Microsoft Edge" "Vivaldi" "Deezer" "Spotify" "iTunes" "PotPlayer" "VLC media player" "Audacity" "OBS Studio" "ImageGlass" "ShareX" "GIMP" "Discord" "TeamSpeak" "Teams" "Zoom" "Slack" "Adobe Acrobat Reader" "Foxit Reader" "Microsoft Office" "Libre Office" "7zip" "Winrar" "Visual Studio Code" "Notepad++" "Github" "Git" "FileZilla" "WinSCP" "PuTTY" "Python 3" "Java Runtime Environment 8" "Node.JS" "Steam" "GOG Galaxy" "Epic Games" "Uplay" "Battle.net" "Origin" "VirtualBox" "VMware Workstation Pro" "Nilesoft Shell" "TeamViewer" "AnyDesk" "qBittorrent" "Bulk Crap Uninstaller" "Everything" "MSI Afterburner" "Visual C++ Redistributables" "DirectX" ".NET Framework 4.8"
 for %%i in (!APPS_MENU!) do set "%%~i=[ ] %%~i"
 
 :APPS_MENU
@@ -56,7 +56,7 @@ echo              DEVELOPER TOOLS                              GAMES LAUNCHER   
 echo              ---------------                              --------------                               ------
 echo              28 !Visual Studio Code!                    38 !Steam!                                 44 !VirtualBox!
 echo              29 !Notepad++!                             39 !GOG Galaxy!                            45 !VMware Workstation Pro!
-echo              30 !Github!                                40 !Epic Games!                            46 !VMware Workstation Player!
+echo              30 !Github!                                40 !Epic Games!                            46 !Nilesoft Shell!
 echo              31 !Git!                                   41 !Uplay!                                 47 !TeamViewer!
 echo              32 !FileZilla!                             42 !Battle.net!                            48 !AnyDesk!
 echo              33 !WinSCP!                                43 !Origin!                                49 !qBittorrent!
@@ -65,17 +65,17 @@ echo              35 !Python 3!                                                 
 echo              36 !Java Runtime Environment 8!                                                         52 !MSI Afterburner!
 echo              37 !Node.JS!
 echo.
-echo              !S_RED!Recommended to install
+echo              !S_RED!Recommended to Install
 echo              ----------------------
 echo              53 !Visual C++ Redistributables!
 echo              54 !DirectX!
 echo              55 !.NET Framework 4.8!
 echo.
 echo.
-echo                                               Make your choices and press Enter or type 56 to Exit
+echo                                                         Make your choices and press Enter
 echo.
 set choice=
-set /p "choice=|                                                                        "
+set /p "choice=|                                                                       "
 
 REM WEB BROWSERS
 if "!choice!"=="1" if "!Google Chrome!"=="[ ] Google Chrome" (set "Google Chrome=[x] Google Chrome") else set "Google Chrome=[ ] Google Chrome"
@@ -139,7 +139,7 @@ if "!choice!"=="43" if "!Origin!"=="[ ] Origin" (set "Origin=[x] Origin") else s
 REM OTHERS
 if "!choice!"=="44" if "!VirtualBox!"=="[ ] VirtualBox" (set "VirtualBox=[x] VirtualBox") else set "VirtualBox=[ ] VirtualBox"
 if "!choice!"=="45" if "!VMware Workstation Pro!"=="[ ] VMware Workstation Pro" (set "VMware Workstation Pro=[x] VMware Workstation Pro") else set "VMware Workstation Pro=[ ] VMware Workstation Pro"
-if "!choice!"=="46" if "!VMware Workstation Player!"=="[ ] VMware Workstation Player" (set "VMware Workstation Player=[x] VMware Workstation Player") else set "VMware Workstation Player=[ ] VMware Workstation Player"
+if "!choice!"=="46" if "!Nilesoft Shell!"=="[ ] Nilesoft Shell" (set "Nilesoft Shell=[x] Nilesoft Shell") else set "Nilesoft Shell=[ ] Nilesoft Shell"
 if "!choice!"=="47" if "!TeamViewer!"=="[ ] TeamViewer" (set "TeamViewer=[x] TeamViewer") else set "TeamViewer=[ ] TeamViewer"
 if "!choice!"=="48" if "!AnyDesk!"=="[ ] AnyDesk" (set "AnyDesk=[x] AnyDesk") else set "AnyDesk=[ ] AnyDesk"
 if "!choice!"=="49" if "!qBittorrent!"=="[ ] qBittorrent" (set "qBittorrent=[x] qBittorrent") else set "qBittorrent=[ ] qBittorrent"
@@ -152,10 +152,7 @@ if "!choice!"=="53" if "!Visual C++ Redistributables!"=="[ ] Visual C++ Redistri
 if "!choice!"=="54" if "!DirectX!"=="[ ] DirectX" (set "DirectX=[x] DirectX") else set "DirectX=[ ] DirectX"
 if "!choice!"=="55" if "!.NET Framework 4.8!"=="[ ] .NET Framework 4.8" (set ".NET Framework 4.8=[x] .NET Framework 4.8") else set ".NET Framework 4.8=[ ] .NET Framework 4.8"
 
-REM Exit Script
-if "!choice!"=="56" call:EXIT
-
-for /l %%i in (1,1,56) do if "!choice!"=="%%i" goto APPS_MENU
+for /l %%i in (1,1,55) do if "!choice!"=="%%i" goto APPS_MENU
 if "!choice!"=="" (
     for %%i in (!APPS_MENU!) do if "!%%~i!"=="[x] %%~i" goto APPS_INSTALL
     echo                                                    ERROR: "!choice!" is not a valid choice...
@@ -191,7 +188,7 @@ if "!ShareX!"=="[x] ShareX" call:CHOCO sharex
 if "!GIMP!"=="[x] GIMP" call:CHOCO gimp
 
 REM MESSAGING
-if "!Discord!"=="[x] Discord" call:CHOCO discord
+if "!Discord!"=="[x] Discord" call:CHOCO discord.install  
 if "!TeamSpeak!"=="[x] TeamSpeak" call:CHOCO teamspeak
 if "!Teams!"=="[x] Teams" call:CHOCO microsoft-teams
 if "!Zoom!"=="[x] Zoom" call:CHOCO zoom
@@ -230,7 +227,7 @@ if "!Origin!"=="[x] Origin" call:CHOCO origin
 REM OTHERS
 if "!VirtualBox!"=="[x] VirtualBox" call:CHOCO virtualbox
 if "!VMware Workstation Pro!"=="[x] VMware Workstation Pro" call:CHOCO vmwareworkstation
-if "!VMware Workstation Player!"=="[x] VMware Workstation Player" call:CHOCO vmware-workstation-player
+if "!Nilesoft Shell!"=="[x] Nilesoft Shell" call:CHOCO nilesoft-shell
 if "!TeamViewer!"=="[x] TeamViewer" call:CHOCO teamviewer
 if "!AnyDesk!"=="[x] AnyDesk" call:CHOCO anydesk
 if "!qBittorrent!"=="[x] qBittorrent" call:CHOCO qbittorrent
